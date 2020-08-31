@@ -1,0 +1,31 @@
+syntax = "proto3";
+package morais_protos;
+
+option go_package = ".;work";
+
+message Context {
+    string result = 1;
+}
+
+message SvcWorkRequest {
+    string sourceFile = 1;
+    string webhookUrl = 2;
+    FileMetadata fileMetadata = 3;
+    Context context = 4;
+}
+
+message SvcWorkResponse {
+    Context context = 2;
+    Error error = 3;
+}
+
+message FileMetadata {
+    string mimetype = 1;
+    string md5 = 2;
+    int64 size = 3;
+}
+
+message Error {
+    string type = 1;
+    string message = 2;
+}
