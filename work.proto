@@ -1,10 +1,15 @@
 syntax = "proto3";
 package morais_protos;
 
-option go_package = ".;work";
+option go_package = "github.com/moraisworkrunner/work-messages;work_messages";
+
+// The Work service definition.
+service Work {  
+    rpc PostWork (SvcWorkRequest) returns (SvcWorkResponse) {}
+}
 
 message Context {
-    string result = 1;
+    string response_code = 2;
 }
 
 message SvcWorkRequest {
