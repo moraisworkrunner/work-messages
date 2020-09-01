@@ -3,11 +3,6 @@ package morais_protos;
 
 option go_package = "github.com/moraisworkrunner/work-messages;work_messages";
 
-// The Work service definition.
-service Work {  
-    rpc PostWork (SvcWorkRequest) returns (SvcWorkResponse) {}
-}
-
 message Context {
     string id = 3;
 }
